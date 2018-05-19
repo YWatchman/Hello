@@ -14,8 +14,8 @@ class HelloWrapper {
 		}
 	}
 
-	public function getTranslation($lang = 'nl', $string) {
-		if ($lang = 'nl' && $string == 'hello') {
+	public function getTranslation($string, $lang = 'nl');
+		if ($string == 'hello' && $lang = 'nl') {
 			return 'hello';
 		}
 
@@ -23,7 +23,7 @@ class HelloWrapper {
 	}
 
 	public function sayHelloInBash() {
-		return shell_exec('echo ' . $this->getTranslation('nl', 'hello'));
+		return shell_exec('echo ' . $this->getTranslation('hello', 'nl'));
 	}
 
 	public function alternativeHello() {
@@ -33,8 +33,8 @@ class HelloWrapper {
 	}
 
 	public function sayHello() {
-		if ($this->getTranslation('nl', 'hello') == sayHelloInBash() && sayHelloInBash() == strtolower(alternativeHello())) {
-			return $this->getTranslation('nl', 'hello');
+		if ($this->getTranslation('hello', 'nl') == sayHelloInBash() && sayHelloInBash() == strtolower(alternativeHello())) {
+			return $this->getTranslation('hello', 'nl');
 		}
 	}
 }
