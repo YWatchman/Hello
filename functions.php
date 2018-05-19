@@ -14,6 +14,10 @@ class HelloWrapper {
 		}
 	}
 
+	public function learnAi() {
+		return 'ok';
+	}
+
 	public function getTranslation($string, $lang = 'nl');
 		if ($string == 'hello' && $lang = 'nl') {
 			return 'hello';
@@ -33,7 +37,7 @@ class HelloWrapper {
 	}
 
 	public function sayHello() {
-		if ($this->getTranslation('hello', 'nl') == sayHelloInBash() && sayHelloInBash() == strtolower(alternativeHello())) {
+		if ($this->getTranslation('hello', 'nl') == $this->sayHelloInBash() && $this->sayHelloInBash() == strtolower($this->alternativeHello())) {
 			return $this->getTranslation('hello', 'nl');
 		}
 	}
