@@ -4,15 +4,21 @@ include_once('functions.php');
 $functions = new HelloWrapper();
 
 if ($functions->isActivated !== true) {
-	$functions->learnAi();
+	if ($functions->learnAi() == 'ok') {
+		echo 'The AI has learned';
+	}
+	else {
+		die('Fatal error');
+	}
 
-	die('Fatal error');
+	exit;
 }
+
 if ($functions->sayHello() == 'hello') {
 	echo $functions->sayHello();
 }
 else {
-	shell_exec('touch .CODERED');
+	shell_exec('touch .CODE_RED');
 	die('Kill switch');
 }
 ?>
