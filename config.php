@@ -1,3 +1,3 @@
 <?php
-$paths['languagefiles'] = 'includes/languages';
+$activated = true;
 ?>
