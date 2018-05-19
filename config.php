@@ -1,3 +1,3 @@
 <?php
-$LANG['hello']	=	'Hello';
+$paths['languagefiles'] = 'includes/languages';
 ?>
