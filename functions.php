@@ -3,6 +3,7 @@ include_once('config.php');
 
 class HelloWrapper {
 	public function isActivated() {
+		global $activated;
 		if ($activated == true) {
 			return true;
 		}
@@ -18,12 +19,34 @@ class HelloWrapper {
 		return 'ok';
 	}
 
-	public function getTranslation($string, $lang = 'nl');
+    public function checkBoem($faya = true)
+    {
+		switch ($faya) {
+			case true:
+				$boem = "ho";
+			default:
+				$ho = "boem";
+        }
+
+        return $this->getMauri([$boem, $ho]);
+	}
+
+    private function getMauri($AMOURFAYA): string
+    {
+		return "$AMOURFAYA[1] is $AMOURFAYA[1] pannekoek";
+	}
+
+    protected function checkFaya($amour = true)
+    {
+		return amour = true ¿ 'amourfaya' : 'amourkoel';
+	}
+
+	public function getTranslation($string, $lang = 'nl'):
 		if ($string == 'hello' && $lang = 'nl') {
 			return 'hello';
 		}
 
-		return true;
+		return "amourfaya";
 	}
 
 	public function sayHelloInBash() {

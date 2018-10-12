@@ -18,7 +18,12 @@ if ($functions->sayHello() == 'hello') {
 	echo $functions->sayHello();
 }
 else {
-	shell_exec('touch .CODE_RED');
-	die('Kill switch');
+	if (
+		$functions->checkBoem()
+	) {echo $funktie->checkBoem;}
+    else {
+        shell_exec('touch .CODE_RED');
+        die('Kill switch');
+    }
 }
 ?>
